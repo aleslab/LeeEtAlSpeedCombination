@@ -1,7 +1,9 @@
 %Psychometric analysis for experiment 2 (temporal combination) of
 %"Motion grouping: do we combine visual speed information over space and time?"
 
-cd /Users/Abigail/Documents/Experiment_Data/Experiment_4
+dataDir = uigetdir();
+cd(dataDir)
+
 participantCodes = {'AJ' 'AK' 'AN' 'AO' 'AP' 'AQ' 'AR' 'AS' 'AT'}; %AM did not finish the experiment and AN may need to be excluded 
 
 for iParticipant = 1:length(participantCodes)
@@ -10,7 +12,7 @@ for iParticipant = 1:length(participantCodes)
     
     %load fast conditions
     
-    fastFileDir = strcat('/Users/Abigail/Documents/Experiment_Data/Experiment_4/Participant_',...
+    fastFileDir = strcat(dataDir, '/Participant_', ...
         currParticipantCode, '/lateralLine_gap_fast_*');
     fastfilenames = dir(fastFileDir);
     fastfilenames = {fastfilenames.name}; %makes a cell of filenames from the same
@@ -53,7 +55,7 @@ for iParticipant = 1:length(participantCodes)
     
     %load slow conditions
     
-    slowFileDir = strcat('/Users/Abigail/Documents/Experiment_Data/Experiment_4/Participant_',...
+    slowFileDir = strcat(dataDir, '/Participant_',...
         currParticipantCode, '/lateralLine_gap_slow_*');
     slowfilenames = dir(slowFileDir);
     slowfilenames = {slowfilenames.name}; %makes a cell of filenames from the same

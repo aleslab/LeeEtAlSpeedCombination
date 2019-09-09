@@ -1,7 +1,8 @@
 %Psychometric analysis for experiment 1 (spatial combination) of
 %"Motion grouping: do we combine visual speed information over space and time?"
 
-cd /Users/Abigail/Documents/Experiment_Data/Experiment_5
+dataDir = uigetdir();
+cd(dataDir)
 
 participantCodes = {'AW' 'AX' 'AY' 'AZ' 'BA' 'BB' 'BD' 'BE' 'BF' 'AS'}; %
 
@@ -11,7 +12,7 @@ for iParticipant = 1:length(participantCodes)
     
     %load 0 deg gap data and extract the information we need for analysis
     
-    zeroFileDir = strcat('/Users/Abigail/Documents/Experiment_Data/Experiment_5/',...
+    zeroFileDir = strcat(dataDir,'/',...
         currParticipantCode, '/lateralLine_spatialGap_offset_0_*');
     zerofilenames = dir(zeroFileDir);
     zerofilenames = {zerofilenames.name}; %makes a cell of filenames from the same
@@ -47,7 +48,7 @@ for iParticipant = 1:length(participantCodes)
     
     %load 2 deg gap data and extract the information we need for analysis
     
-    twoFileDir = strcat('/Users/Abigail/Documents/Experiment_Data/Experiment_5/',...
+    twoFileDir = strcat(dataDir,'/',...
         currParticipantCode, '/lateralLine_spatialGap_offset_2_*');
     twofilenames = dir(twoFileDir);
     twofilenames = {twofilenames.name}; %makes a cell of filenames from the same
@@ -82,7 +83,7 @@ for iParticipant = 1:length(participantCodes)
     
     %load 4 deg gap data and extract the information we need for analysis
     
-    fourFileDir = strcat('/Users/Abigail/Documents/Experiment_Data/Experiment_5/',...
+    fourFileDir = strcat(dataDir, '/', ...
         currParticipantCode, '/lateralLine_spatialGap_offset_4_*');
     fourfilenames = dir(fourFileDir);
     fourfilenames = {fourfilenames.name}; %makes a cell of filenames from the same
@@ -117,7 +118,7 @@ for iParticipant = 1:length(participantCodes)
     
     %load 6 deg gap data and extract the information we need for analysis
     
-    sixFileDir = strcat('/Users/Abigail/Documents/Experiment_Data/Experiment_5/',...
+    sixFileDir = strcat(dataDir, '/', ...
         currParticipantCode, '/lateralLine_spatialGap_offset_6_*');
     sixfilenames = dir(sixFileDir);
     sixfilenames = {sixfilenames.name}; %makes a cell of filenames from the same
